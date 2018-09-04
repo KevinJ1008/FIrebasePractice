@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/user_email"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="10dp"
+        android:hint="Email :"/>
+
+    <EditText
+        android:id="@+id/user_name"
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/user_email"
+        app:layout_constraintTop_toTopOf="@+id/user_email"
+        android:hint="Name :"/>
+
+    <Button
+        android:id="@+id/add_user_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/user_name"
+        app:layout_constraintTop_toTopOf="@+id/user_name"
+        android:text="Add User"/>
+
+    <Button
+        android:id="@+id/get_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_email"
+        android:textAllCaps="false"
+        android:text="Get Users"/>
+
+    <Button
+        android:id="@+id/get_article"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/get_user"
+        android:textAllCaps="false"
+        android:text="Get all articles"/>
+
+    <Button
+        android:id="@+id/show_friends"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/get_article"
+        android:textAllCaps="false"
+        android:text="Show Friends"/>
+
+    <TextView
+        android:id="@+id/title_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:text="Title :"
+        android:textSize="20sp"
+        app:layout_constraintRight_toLeftOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/title" />
+
+
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="12dp"
+        android:hint="Title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/show_friends"
+        app:layout_constraintTop_toBottomOf="@+id/show_friends" />
+
+    <TextView
+        android:id="@+id/tag_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
+        android:text="Tag :"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <RadioGroup
+        android:id="@+id/tag_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <RadioButton
+            android:id="@+id/beauty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:button="@null"
+            android:text="表特" />
+
+        <RadioButton
+            android:id="@+id/joke"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:button="@null"
+            android:text="就可" />
+
+        <RadioButton
+            android:id="@+id/gossip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:button="@null"
+            android:text="八卦" />
+
+        <RadioButton
+            android:id="@+id/life"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:button="@null"
+            android:text="生活" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/article"
+        android:layout_width="250dp"
+        android:layout_height="180dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="Type your article"
+        app:layout_constraintEnd_toEndOf="@+id/title"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/tag_group" />
+
+    <Button
+        android:id="@+id/post_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Post article"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="@+id/article"
+        app:layout_constraintTop_toBottomOf="@+id/article" />
+
+    <Button
+        android:id="@+id/search_beauty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/post_btn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="5dp"
+        android:textAllCaps="false"
+        android:text="Beauty"/>
+
+    <Button
+        android:id="@+id/search_gossip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/search_beauty"
+        app:layout_constraintTop_toTopOf="@+id/search_beauty"
+        android:textAllCaps="false"
+        android:text="Gossip"/>
+
+    <Button
+        android:id="@+id/search_joke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/search_gossip"
+        app:layout_constraintTop_toTopOf="@+id/search_beauty"
+        android:textAllCaps="false"
+        android:text="Joke"/>
+
+    <Button
+        android:id="@+id/search_life"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/search_joke"
+        app:layout_constraintTop_toTopOf="@+id/search_beauty"
+        android:textAllCaps="false"
+        android:text="Life"/>
+
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="Search friend's article"
+        app:layout_constraintRight_toLeftOf="@+id/search_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_beauty" />
+
+    <Button
+        android:id="@+id/search_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Search"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/search"
+        app:layout_constraintTop_toTopOf="@+id/search" />
+
+    <EditText
+        android:id="@+id/search_name"
+        android:layout_width="142dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/search"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="15dp"
+        android:hint="Friend's name :"/>
+
+    <EditText
+        android:id="@+id/search_tag"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/search_name"
+        app:layout_constraintTop_toTopOf="@+id/search_name"
+        android:hint="Tag :"/>
+
+    <Button
+        android:id="@+id/search_double_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/search_tag"
+        app:layout_constraintTop_toTopOf="@+id/search_name"
+        android:textAllCaps="false"
+        android:text="Search"/>
+
+    <EditText
+        android:id="@+id/friend_name"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/search_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:hint="Search a friend !"/>
+
+    <Button
+        android:id="@+id/add_friend_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/friend_name"
+        app:layout_constraintTop_toTopOf="@+id/friend_name"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textAllCaps="false"
+        android:text="Add"/>
+
+    <Button
+        android:id="@+id/denied_friend_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/add_friend_btn"
+        app:layout_constraintLeft_toLeftOf="@+id/add_friend_btn"
+        android:textAllCaps="false"
+        android:text="Refuse !!"/>
+
+
+</android.support.constraint.ConstraintLayout>
+</ScrollView>
